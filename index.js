@@ -1,8 +1,9 @@
+// Required variables
 const mysql = require("mysql2");
 const inquirer = require("inquirer");
 require("console.table");
 
-//mysql connection
+//MySQL connection
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
@@ -19,11 +20,12 @@ connection.connect(function (err) {
 
 function firstPrompt() {
 
+  // Prompt, "What would you like to do?"
   inquirer
     .prompt({
       type: "list",
       name: "task",
-      message: "Would you like to do?",
+      message: "What would you like to do?",
       choices: [
         "View Employees",
         "View Employees by Department",
@@ -35,30 +37,37 @@ function firstPrompt() {
     })
     .then(function ({ task }) {  
       switch (task) {
+        // View employees
         case "View Employees":
           viewEmployee();
           break;
 
+        // View employees by department
         case "View Employees by Department":
           viewEmployeeByDepartment();
           break;
       
+        // Add employee  
         case "Add Employee":
           addEmployee();
           break;
 
+        // Remove employees
         case "Remove Employees":
           removeEmployees();
           break;
 
+        // Update employee roles 
         case "Update Employee Role":
           updateEmployeeRole();
           break;
 
+        // Add roles
         case "Add Role":
           addRole();
           break;
 
+        // Exit
         case "End":
           connection.end();
           break;
@@ -66,6 +75,7 @@ function firstPrompt() {
     });
 }
 
+// View employee function
 function viewEmployee() {
   console.log("Viewing employees\n");
 
@@ -90,6 +100,7 @@ function viewEmployee() {
 
 }
 
+// View employee by departments
 function viewEmployeeByDepartment() {
   console.log("Viewing employees by department\n");
 
@@ -116,6 +127,8 @@ function viewEmployeeByDepartment() {
   });
 }
 
+
+// Which department prompt
 function promptDepartment(departmentChoices) {
 
   inquirer
@@ -150,7 +163,7 @@ function promptDepartment(departmentChoices) {
     });
 }
 
-
+// Function to add employees
 function addEmployee() {
   console.log("Inserting an employee!")
 
@@ -177,16 +190,19 @@ function promptInsert(roleChoices) {
   inquirer
     .prompt([
       {
+        // First name of employee
         type: "input",
         name: "first_name",
         message: "What is the employee's first name?"
       },
       {
+        // Last name of employee
         type: "input",
         name: "last_name",
         message: "What is the employee's last name?"
       },
       {
+        // Employee's role
         type: "list",
         name: "roleId",
         message: "What is the employee's role?",
@@ -215,6 +231,7 @@ function promptInsert(roleChoices) {
     });
 }
 
+// Function to remove employees
 function removeEmployees() {
   console.log("Deleting an employee");
 
@@ -236,6 +253,7 @@ function removeEmployees() {
   });
 }
 
+// Prompt to choose which employee to remove
 function promptDelete(deleteEmployeeChoices) {
 
   inquirer
@@ -266,6 +284,7 @@ function updateEmployeeRole() {
 
 }
 
+// Update employees role
 function employeeArray() {
   console.log("Updating an employee");
 
@@ -293,6 +312,7 @@ function employeeArray() {
   });
 }
 
+// Choosing which role for the employee
 function roleArray(employeeChoices) {
   console.log("Updating an role");
 
@@ -350,6 +370,7 @@ function promptEmployeeRole(employeeChoices, roleChoices) {
     });
 }
 
+// Function to add new role 
 function addRole() {
 
   var query =
