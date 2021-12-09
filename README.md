@@ -2,9 +2,11 @@
 
 This project was for my UCSD coding bootcamp. Developing an application to store information in stored.
 
-## Video Demo & Repository
+## Application Preview
 
 https://user-images.githubusercontent.com/85325106/145335885-f9bca51c-efb8-4132-b4ae-e63eb95b7c6f.mp4
+
+## Repository
 
 * [GitHub Repo](https://github.com/latommyla/Employee-Trackr)
 
