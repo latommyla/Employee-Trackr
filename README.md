@@ -4,7 +4,7 @@ This project was for my UCSD coding bootcamp. Developing an application to store
 
 ## Video Demo & Repository
 
-[GitHub Repo](https://github.com/latommyla/Employee-Trackr)
+* [GitHub Repo](https://github.com/latommyla/Employee-Trackr)
 
 ## Description
 
