@@ -28,6 +28,8 @@ To install this project, simply download the zip file or clone the SSH key to yo
 
 ## Contact 
 
+- [Portfolio](https://latommyla.github.io/TL-Portfolio/)
+- [LinkedIn](https://www.linkedin.com/in/tommymla/)
 * [My GitHub](https://github.com/latommyla)
 * [My Email](mailto:tommyl.dmd@gmail.com)
 * [Instagram](https://instagram.com/latommyla)
